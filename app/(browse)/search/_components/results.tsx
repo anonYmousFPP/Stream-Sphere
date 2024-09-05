@@ -13,7 +13,7 @@ export const Results = async ({
     return(
         <div>
             <h2 className="text-lg font-semibold mb-4">
-                Results for term "{term}";
+                Results for term &quot;{term}&quot;;
             </h2>
             {data.length === 0 && (
                 <p className="text-muted-foreground text-sm">
