@@ -13,7 +13,7 @@ const roomServiCe = new RoomServiceClient(
 export const onBlock = async (id: string) => {
     const self = await getSelf();
 
-    let blockedUser
+    let blockedUser = { blocked: { username: "unknown" } };
     try{
         await blockUser(id);
     } 
