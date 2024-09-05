@@ -27,7 +27,7 @@ export const Logo = () => {
                     StreamSphere
                 </p>
                 <p className="text-sm text-muted-foreground">
-                    Let's play
+                    Let&apos;s play
                 </p>
             </div>
         </div>
