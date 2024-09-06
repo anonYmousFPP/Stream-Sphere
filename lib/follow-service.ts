@@ -134,9 +134,9 @@ export const unfollowUser = async (id: string) => {
             id: existingFollow.id
         },
         include: {
-            following: true
+            following: true,
         }
     })
-
+    
     return follow;
 }

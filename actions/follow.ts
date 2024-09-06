@@ -13,7 +13,8 @@ export const onFollow = async(id: string) => {
         }
 
         return followedUser;
-    }catch(err){
+    }catch(error){
+        console.log(`My error is 1 ${error}`);
         throw new Error("Internal Error");
     }
 }
@@ -21,6 +22,7 @@ export const onFollow = async(id: string) => {
 export const onUnfollow = async (id: string) => {
     try{
         const unfollowedUser = await unfollowUser(id);
+        
         revalidatePath("/");
 
         if(unfollowedUser){
@@ -29,6 +31,6 @@ export const onUnfollow = async (id: string) => {
 
         return unfollowedUser;
     }catch(error){
-        throw new Error("Imternal Error");
+        throw new Error("Internal Error");
     }
 }

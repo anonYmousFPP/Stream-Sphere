@@ -8,7 +8,6 @@ import { useTransition } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { onFollow, onUnfollow } from "@/actions/follow";
-import { start } from "repl";
 import { toast } from "sonner";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -29,15 +28,15 @@ export const Actions = ({
     const handleFollow = () => {
         startTransition(() => {
             onFollow(hostIdentity)
-                .then((data) => toast.success(`You have unfollowed ${data.following.username}`))
+                .then((data) => toast.success(`You are following ${data.following.username}`))
                 .catch(() => toast.error("Something went wrong"));
         })
     }
 
     const handleUnfollow = () => {
         startTransition(() => {
-            onFollow(hostIdentity)
-                .then((data) => toast.success(`You are not following ${data.following.username}`))
+            onUnfollow(hostIdentity)
+                .then((data) => toast.success(`You have Unfollowed ${data.following.username}`))
                 .catch(() => toast.error("Something went wrong"));
         })
     }
